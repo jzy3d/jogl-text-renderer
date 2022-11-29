@@ -10,9 +10,9 @@ To get it in your project, add this dependency to your Maven project :
 
 ```xml
 <dependency>
-	<groupId>org.jzy3d</groupId>
-	<artifactId>jogl-text-renderer</artifactId>
-	<version>2.4-SNAPSHOT</version>
+  <groupId>org.jzy3d</groupId>
+  <artifactId>jogl-text-renderer</artifactId>
+  <version>2.4-SNAPSHOT</version>
 </dependency>
 ```
 
