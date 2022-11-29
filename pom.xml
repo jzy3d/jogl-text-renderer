@@ -1,0 +1,169 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jzy3d</groupId>
+	<artifactId>jogl-text-renderer</artifactId>
+	<version>2.4-SNAPSHOT</version>
+	<name>JOGL Text Renderer</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+		  <groupId>org.jogamp.jogl</groupId>
+		  <artifactId>jogl-all</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.jogl</groupId>
+		  <artifactId>jogl-all-natives-linux-aarch64</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.jogl</groupId>
+		  <artifactId>jogl-all-natives-linux-amd64</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.jogl</groupId>
+		  <artifactId>jogl-all-natives-linux-armv6hf</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.jogl</groupId>
+		  <artifactId>jogl-all-natives-linux-i586</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.jogl</groupId>
+		  <artifactId>jogl-all-natives-macosx-universal</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.jogl</groupId>
+		  <artifactId>jogl-all-natives-windows-amd64</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.jogl</groupId>
+		  <artifactId>jogl-all-natives-windows-i586 </artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<!-- GLUEGEN -->
+
+
+		<dependency>
+		  <groupId>org.jogamp.gluegen</groupId>
+		  <artifactId>gluegen-rt</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.gluegen</groupId>
+		  <artifactId>gluegen-rt-natives-macosx-universal</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.gluegen</groupId>
+		  <artifactId>gluegen-rt-natives-linux-aarch64</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.gluegen</groupId>
+		  <artifactId>gluegen-rt-natives-linux-amd64</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.gluegen</groupId>
+		  <artifactId>gluegen-rt-natives-linux-armv6hf</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.gluegen</groupId>
+		  <artifactId>gluegen-rt-natives-linux-i586</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.gluegen</groupId>
+		  <artifactId>gluegen-rt-natives-macosx-universal</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.gluegen</groupId>
+		  <artifactId>gluegen-rt-natives-windows-amd64</artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>org.jogamp.gluegen</groupId>
+		  <artifactId>gluegen-rt-natives-windows-i586 </artifactId>
+		  <version>v2.4.0-rc4</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.9</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>disable-java8-doclint</id>
+			<activation>
+				<jdk>[1.8,)</jdk>
+			</activation>
+			<properties>
+				<additionalparam>-Xdoclint:none</additionalparam>
+			</properties>
+		</profile>
+	</profiles>
+
+	<repositories>
+		<repository>
+			<id>jzy3d-snapshots</id>
+			<name>Jzy3d Snapshots</name>
+			<url>https://maven.jzy3d.org/snapshots/</url>
+		</repository>
+		<repository>
+			<id>jzy3d-releases</id>
+			<name>Jzy3d Releases</name>
+			<url>https://maven.jzy3d.org/releases/</url>
+		</repository>
+	</repositories>
+</project>
