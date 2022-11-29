@@ -32,3 +32,5 @@ Which requires you add this to this list of Maven repositories in your Maven pro
   </repository>
 </repositories>
 ```
+
+The `TextRenderer` in this module has exactly the same name than the existing one in JOGL distro. While I could get `jogl-text-renderer` loaded first in my IDE classpath, it may be overriden by the original text renderer when you run on your setup!
