@@ -1027,7 +1027,7 @@ public final class TextRenderer {
                 for (EventListener listener : listeners) {
                     delegate.addListener(listener);
                 }
-
+                
                 // Specify the color
                 if ((r != null) && (g != null) && (b != null) && (a != null)) {
                     delegate.setColor(r, g, b, a);

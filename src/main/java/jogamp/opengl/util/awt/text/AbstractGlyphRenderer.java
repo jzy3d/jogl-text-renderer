@@ -349,7 +349,9 @@ abstract class AbstractGlyphRenderer implements GlyphRenderer, QuadPipeline.Even
     public final void flush(/*@Nonnull*/ final GL gl) {
 
         Check.notNull(gl, "GL cannot be null");
-        Check.state(inRenderCycle, "Must be in render cycle");
+
+// Commented to work in Jzy3D (uncomment won't prevent tests to pass)
+// Check.state(inRenderCycle, "Must be in render cycle");
 
         pipeline.flush(gl);
         gl.glFlush();
@@ -397,7 +399,7 @@ abstract class AbstractGlyphRenderer implements GlyphRenderer, QuadPipeline.Even
         }
 
         // Render any outstanding quads first
-        if (!pipeline.isEmpty()) {
+        if (pipeline!=null && !pipeline.isEmpty()) {
             fireEvent(EventType.AUTOMATIC_FLUSH);
             final GL gl = GLContext.getCurrentGL();
             flush(gl);
