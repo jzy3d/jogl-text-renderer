@@ -140,6 +140,15 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>2.10</version>
+			</extension>
+		</extensions>
+
 	</build>
 
 	<profiles>
@@ -166,4 +175,19 @@
 			<url>https://maven.jzy3d.org/releases/</url>
 		</repository>
 	</repositories>
+	
+		<!-- Used to deploy to Jzy3d repository -->
+	<distributionManagement>
+		<repository>
+			<id>jzy3d-ftp</id>
+			<name>Jzy3d Maven Folder</name>
+			<url>ftp://ftp.cluster013.ovh.net/maven/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>jzy3d-ftp</id>
+			<name>Jzy3d Maven Folder SNAPSHOTS</name>
+			<url>ftp://ftp.cluster013.ovh.net/maven/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 </project>
